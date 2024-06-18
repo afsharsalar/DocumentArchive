@@ -8,6 +8,7 @@ namespace DocumentArchive.Domain.CustomerAggregator
         {
         }
 
+        private Customer() : this(null!) { }
         public CustomerType Type { get; set; }
 
         public string Title { get; set; }

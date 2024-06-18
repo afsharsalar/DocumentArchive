@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Domain", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Application", "src\Application\DocumentArchive.Application.csproj", "{B3ED1F8B-1148-4857-91B5-7B811E3DEA38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Infrastracture", "src\Infrastracture\DocumentArchive.Infrastracture.csproj", "{C8DCF631-78BE-46CE-BF81-BF0AA2754C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Infrastructure", "src\Infrastracture\DocumentArchive.Infrastructure.csproj", "{C8DCF631-78BE-46CE-BF81-BF0AA2754C67}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.APIs", "src\APIs\DocumentArchive.APIs.csproj", "{E84138EC-4363-448C-88E1-64D01C105EE1}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.UnitTests",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D925B80-FADB-40DE-8411-B629138A4644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentArchive.IntegrationTests", "tests\DocumentArchive.IntegrationTests\DocumentArchive.IntegrationTests.csproj", "{5944E11A-D57C-46EC-965D-722793F4B879}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.IntegrationTests", "tests\DocumentArchive.IntegrationTests\DocumentArchive.IntegrationTests.csproj", "{5944E11A-D57C-46EC-965D-722793F4B879}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

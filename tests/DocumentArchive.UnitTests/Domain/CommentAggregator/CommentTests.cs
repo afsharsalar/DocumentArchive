@@ -22,7 +22,7 @@ namespace DocumentArchive.UnitTests.Domain.CommentAggregator
 
 
             //act
-
+          
             var comment = Comment.Create(documentId, userId, content);
 
             //assert

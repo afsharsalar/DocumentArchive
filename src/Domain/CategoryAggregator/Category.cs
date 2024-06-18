@@ -7,6 +7,7 @@ namespace DocumentArchive.Domain.CategoryAggregator
         public Category(CategoryId id) : base(id)
         {
         }
+        private Category() : this(null!) { }
 
         public string Title { get; set; }
 

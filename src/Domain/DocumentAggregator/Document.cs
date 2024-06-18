@@ -13,11 +13,11 @@ public class Document : BaseAggregateRoot<DocumentId>
         _commentIds=new List<CommentId>();
     }
 
+    private Document() : this(null!) { }
 
+    public CategoryId CategoryId { get; set; }
 
-    public CategoryId? CategoryId { get; set; }
-
-    public CustomerId? CustomerId { get; set; }
+    public CustomerId CustomerId { get; set; }
 
     public int UserId { get; set; }
     public string Title { get; private set; } = null;
@@ -37,7 +37,7 @@ public class Document : BaseAggregateRoot<DocumentId>
     public IReadOnlyCollection<CommentId> CommentIds => _commentIds;
 
 
-    public static Document CreateDraft(int userId,CustomerId? customerId,CategoryId? categoryId, string title, string description)
+    public static Document CreateDraft(int userId,CustomerId customerId,CategoryId categoryId, string title, string description)
     {
         return new Document(DocumentId.CreateUniqueId())
         {
@@ -51,7 +51,7 @@ public class Document : BaseAggregateRoot<DocumentId>
         };
     }
 
-    public static Document CreateDocument(int userId, CustomerId? customerId, CategoryId? categoryId, string title, string description,IReadOnlyList<Tag> tags)
+    public static Document CreateDocument(int userId, CustomerId customerId, CategoryId categoryId, string title, string description,IReadOnlyList<Tag> tags)
     {
         var document = CreateDraft(userId,customerId,categoryId, title, description);
 

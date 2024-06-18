@@ -2,7 +2,7 @@
 
 namespace DocumentArchive.Domain.Common
 {
-    public abstract class BaseAggregateRoot<TId>: BaseEntity<TId>,IAggregateRoot
+    public abstract class BaseAggregateRoot<TId> : BaseEntity<TId>, IAggregateRoot where TId : notnull
     {
         private readonly IList<IDomainEvent> _events;
         public IReadOnlyCollection<IDomainEvent> Events => _events.ToImmutableArray();
@@ -10,7 +10,7 @@ namespace DocumentArchive.Domain.Common
 
         protected BaseAggregateRoot(TId id) : base(id)
         {
-            _events = new List<IDomainEvent>();
+            _events = [];
         }
 
         public void ClearEvents() => _events.Clear();

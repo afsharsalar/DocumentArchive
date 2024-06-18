@@ -29,7 +29,7 @@
             return left.Equals(right);
         }
 
-        public static bool operator != (BaseEntity<TId> left, BaseEntity<TId> right)
+        public static bool operator != (BaseEntity<TId>? left, BaseEntity<TId>? right)
         {
             return !(left == right);
         }

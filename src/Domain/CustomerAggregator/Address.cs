@@ -6,23 +6,23 @@ namespace DocumentArchive.Domain.CustomerAggregator
     {
         public string Street { get; set; }
         public string City { get; set; }
-        public string State { get; set; }
+        //public string State { get; set; }
         public string PostalCode { get; set; }
         public override IEnumerable<object> GetEqualityComponents()
         {
-            yield return State;
+          
             yield return City;
             yield return Street;
             yield return PostalCode;
         }
 
 
-        public static Address Create(string state, string city, string street, string postalCode)
+        public static Address Create( string city, string street, string postalCode)
         {
             return new Address
             {
                 City = city,
-                State = state,
+          
                 Street = street,
                 PostalCode = postalCode
             };
@@ -31,7 +31,7 @@ namespace DocumentArchive.Domain.CustomerAggregator
 
         public override string ToString()
         {
-            return $"{Street}, {City}, {State} , {PostalCode}";
+            return $"{Street}, {City},  {PostalCode}";
         }
     }
 }

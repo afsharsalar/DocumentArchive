@@ -2,6 +2,7 @@
 
 namespace DocumentArchive.Domain.UserAggregator;
 
-public class User  : IdentityUser<int>
+public class UserLogin : IdentityUserLogin<int>
 {
+    
 }

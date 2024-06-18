@@ -9,6 +9,8 @@ namespace DocumentArchive.Domain.CommentAggregator
         {
         }
 
+        private Comment():this(null!) { }
+
         public int UserId { get; set; }
         public DocumentId DocumentId { get; set; } = null;
         public string Content { get; set; }
