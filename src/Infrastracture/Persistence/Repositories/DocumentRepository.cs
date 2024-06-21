@@ -1,12 +1,15 @@
 ﻿using DocumentArchive.Domain.DocumentAggregator;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace DocumentArchive.Infrastructure.Persistence.Repositories;
 
-public class DocumentRepository : IDocumentRepository
+public class DocumentRepository(DocumentArchiveDbContext context) : IDocumentRepository
 {
+    private readonly DocumentArchiveDbContext _context = context;
     public void Create(Document document)
     {
-        throw new NotImplementedException();
+        _context.Documents.Add(document);
     }
 
     public void Delete(Document document)
@@ -14,9 +17,9 @@ public class DocumentRepository : IDocumentRepository
         throw new NotImplementedException();
     }
 
-    public Task<Document> GetById(DocumentId documentId, CancellationToken cancellationToken)
+    public Task<Document?> GetById(DocumentId documentId, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return _context.Documents.SingleOrDefaultAsync(p => p.Id == documentId, cancellationToken);
     }
 
     public Task<IReadOnlyCollection<Document>> GetPaged(int page, int pageSize, CancellationToken cancellationToken)
@@ -31,7 +34,7 @@ public class DocumentRepository : IDocumentRepository
 
     public Task SaveChangesAsync(CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return _context.SaveChangesAsync(cancellationToken);
     }
 
     public void Update(Document document)

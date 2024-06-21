@@ -209,7 +209,7 @@ namespace DocumentArchive.Infrastructure.Migrations
                     DocumentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Value = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CommentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

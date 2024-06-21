@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DocumentArchive.Infrastructure.Migrations
 {
     [DbContext(typeof(DocumentArchiveDbContext))]
-    [Migration("20240618165614_init")]
+    [Migration("20240620155918_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -389,7 +389,8 @@ namespace DocumentArchive.Infrastructure.Migrations
                             SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
 
                             b1.Property<Guid>("Value")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("CommentId");
 
                             b1.HasKey("DocumentId", "Id");
 

@@ -386,7 +386,8 @@ namespace DocumentArchive.Infrastructure.Migrations
                             SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
 
                             b1.Property<Guid>("Value")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("CommentId");
 
                             b1.HasKey("DocumentId", "Id");
 

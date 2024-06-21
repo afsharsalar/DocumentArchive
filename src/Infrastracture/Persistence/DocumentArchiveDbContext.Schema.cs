@@ -72,6 +72,7 @@
         public static class CommentDbSchema
         {
             public const string TableName = "Comments";
+            public const string ForeignKey = "CommentId";
 
             public const string DocumentId = "DocumentId";
 

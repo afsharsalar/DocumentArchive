@@ -6,6 +6,6 @@
         string Title,
         string Description,
         IReadOnlyList<Tag> Tags)
-        :IRequest<CreateDocumentResponse>;
+        :IRequest<CreateDocumentCommandResponse>;
     
 }

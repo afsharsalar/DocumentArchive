@@ -11,7 +11,7 @@ namespace DocumentArchive.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection ConfigureApplicationLayer(this IServiceCollection services,
+    public static IServiceCollection ConfigureInfrastructureLayer(this IServiceCollection services,
          IConfiguration configuration)
     {
 

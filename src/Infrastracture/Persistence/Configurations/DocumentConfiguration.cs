@@ -32,6 +32,9 @@ public class DocumentConfiguration : IEntityTypeConfiguration<Document>
         builder.OwnsMany(p => p.CommentIds, cb =>
         {
             cb.ToTable(DocumentArchiveDbContextSchema.DocumentDbSchema.CommentIdsTableName);
+            
+            cb.Property(p=>p.Value).HasColumnName(DocumentArchiveDbContextSchema.CommentDbSchema.ForeignKey);
+
         }).UsePropertyAccessMode(PropertyAccessMode.Field);
 
         builder.Navigation(p => p.CommentIds)

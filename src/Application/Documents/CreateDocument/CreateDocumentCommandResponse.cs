@@ -1,3 +1,3 @@
 ﻿namespace DocumentArchive.Application.Documents.CreateDocument;
 
-public record CreateDocumentResponse(DocumentId DocumentId);
+public record CreateDocumentCommandResponse(DocumentId DocumentId);
