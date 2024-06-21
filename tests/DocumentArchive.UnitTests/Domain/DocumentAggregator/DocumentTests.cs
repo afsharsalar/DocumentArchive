@@ -3,6 +3,9 @@ using DocumentArchive.Domain.CustomerAggregator;
 using DocumentArchive.Domain.DocumentAggregator;
 using FluentAssertions;
 
+using System;
+using System.Collections.Generic;
+
 namespace DocumentArchive.UnitTests.Domain.DocumentAggregator
 {
     public class DocumentTests

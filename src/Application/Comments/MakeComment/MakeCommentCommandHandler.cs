@@ -16,6 +16,9 @@ namespace DocumentArchive.Application.Comments.MakeComment
 
         public async Task<MakeCommentCommandResponse> Handle(MakeCommentCommand request, CancellationToken cancellationToken)
         {
+            var document =await _documentRepository.GetById(request.DocumentId, cancellationToken);
+            if(document == null) { throw new NotFoundDocumentException(); }
+
             var comment = Comment.Create(request.DocumentId, request.UserId, request.Content);
             await _commentRepository.CreateAsync(comment, cancellationToken);
             await _commentRepository.SaveChangesAsync(cancellationToken);

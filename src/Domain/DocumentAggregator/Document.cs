@@ -1,6 +1,6 @@
 ﻿using DocumentArchive.Domain.CategoryAggregator;
 using DocumentArchive.Domain.CommentAggregator;
-using DocumentArchive.Domain.Common;
+using DocumentArchive.Common.Domain;
 using DocumentArchive.Domain.CustomerAggregator;
 
 namespace DocumentArchive.Domain.DocumentAggregator;
@@ -61,6 +61,16 @@ public class Document : BaseAggregateRoot<DocumentId>
         return document;
     }
 
+    public void  UpdateDocument(int userId, CustomerId customerId, CategoryId categoryId, string title, string description, IReadOnlyList<Tag> tags)
+    {
+        UserId = UserId; 
+        CustomerId=customerId; 
+        CategoryId=categoryId; 
+        Title=title; 
+        Description=description;
+        UpdateTags(tags);
+    }
+
     
 
     private void AddTags(IReadOnlyList<Tag> tags)
@@ -87,4 +97,6 @@ public class Document : BaseAggregateRoot<DocumentId>
     {
         Status= DocumentStatus.Deleted;
     }
+
+   
 }

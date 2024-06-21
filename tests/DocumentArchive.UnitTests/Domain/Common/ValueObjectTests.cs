@@ -1,5 +1,7 @@
-﻿using DocumentArchive.Domain.Common;
+﻿using DocumentArchive.Common.Domain;
 using FluentAssertions;
+
+using System.Collections.Generic;
 
 namespace DocumentArchive.UnitTests.Domain.Common
 {

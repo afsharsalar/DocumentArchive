@@ -2,7 +2,7 @@
 {
     public class CreateDocumentRequestValidator : AbstractValidator<CreateDocumentRequest>
     {
-        public const string TagMaximumLengthMessage = "تعداد کاراکتر های تگ بیشتر از حدف مجاز است";
+        public const string TagMaximumLengthMessage = "تعداد کاراکتر های تگ بیشتر از حد مجاز است";
 
         public CreateDocumentRequestValidator()
         {

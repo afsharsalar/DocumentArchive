@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DocumentArchive.Domain.Common
+namespace DocumentArchive.Common.Domain
 {
     public interface IAggregateRoot
     {

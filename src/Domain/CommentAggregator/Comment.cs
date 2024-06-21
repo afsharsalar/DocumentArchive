@@ -1,4 +1,4 @@
-﻿using DocumentArchive.Domain.Common;
+﻿using DocumentArchive.Common.Domain;
 using DocumentArchive.Domain.DocumentAggregator;
 
 namespace DocumentArchive.Domain.CommentAggregator

@@ -1,5 +1,5 @@
 ﻿
-using DocumentArchive.Domain.Common;
+using DocumentArchive.Common.Domain;
 
 namespace DocumentArchive.Domain.DocumentAggregator
 {

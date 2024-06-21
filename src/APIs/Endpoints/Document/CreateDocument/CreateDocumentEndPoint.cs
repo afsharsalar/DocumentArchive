@@ -1,5 +1,4 @@
 ﻿
-using DocumentArchive.APIs.Filters;
 using DocumentArchive.Application.Documents.CreateDocument;
 
 namespace DocumentArchive.APIs.Endpoints.Document.CreateDocument

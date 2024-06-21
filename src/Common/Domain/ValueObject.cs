@@ -1,4 +1,4 @@
-﻿namespace DocumentArchive.Domain.Common
+﻿namespace DocumentArchive.Common.Domain
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {

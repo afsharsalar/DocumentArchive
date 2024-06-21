@@ -1,4 +1,4 @@
-﻿using DocumentArchive.Domain.Common;
+﻿using DocumentArchive.Common.Domain;
 using FluentAssertions;
 
 namespace DocumentArchive.UnitTests.Domain.Common

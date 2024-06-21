@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace DocumentArchive.Domain.Common
+namespace DocumentArchive.Common.Domain
 {
     public abstract class BaseAggregateRoot<TId> : BaseEntity<TId>, IAggregateRoot where TId : notnull
     {
