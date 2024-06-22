@@ -17,6 +17,9 @@ global using DocumentArchive.Application;
 global using DocumentArchive.Infrastructure;
 global using DocumentArchive.APIs.Abstractions;
 global using DocumentArchive.APIs.Filters;
+global using DocumentArchive.APIs.Endpoints;
+global using DocumentArchive.APIs.Endpoints.Comment.MakeComment;
+global using DocumentArchive.Application.Comments.MakeComment;
 
 
 

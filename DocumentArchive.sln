@@ -21,13 +21,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Integration
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C68D999C-F5D3-4F72-BE55-8A64E66DEB4B}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
 		.gitignore = .gitignore
 		DDD-2024-03-07-0913.excalidraw = DDD-2024-03-07-0913.excalidraw
 		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentArchive.Common", "src\Common\DocumentArchive.Common.csproj", "{BDD8C3CB-3420-43BE-9038-2CC220BC44C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentArchive.Common", "src\Common\DocumentArchive.Common.csproj", "{BDD8C3CB-3420-43BE-9038-2CC220BC44C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

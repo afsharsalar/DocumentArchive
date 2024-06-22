@@ -27,4 +27,9 @@
     <ProjectReference Include="..\Infrastracture\DocumentArchive.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Endpoints\Customer\" />
+    <Folder Include="Endpoints\Category\" />
+  </ItemGroup>
+
 </Project>
