@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DocumentArchive.Application.Categories.GetCategory
 {
-    internal class GetCategoryQueryHandler
+    public class GetCategoryQueryHandler(ICategoryRepository categoryRepository) : IRequestHandler<GetCategoryQuery, GetCategoryQueryResponse>
     {
+        private readonly ICategoryRepository _categoryRepository=categoryRepository;
+        public async Task<GetCategoryQueryResponse> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+        {
+            var category = await _categoryRepository.GetById(request.CategoryId, cancellationToken);
+            if(category == null) { throw new NotFoundCategoryException(); }
+            return (GetCategoryQueryResponse)category;
+        }
     }
 }

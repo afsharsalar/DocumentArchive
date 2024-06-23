@@ -1,4 +1,5 @@
-﻿using DocumentArchive.Domain.CommentAggregator;
+﻿using DocumentArchive.Domain.CategoryAggregator;
+using DocumentArchive.Domain.CommentAggregator;
 using DocumentArchive.Domain.DocumentAggregator;
 using DocumentArchive.Infrastructure.Persistence;
 using DocumentArchive.Infrastructure.Persistence.Repositories;
@@ -25,7 +26,7 @@ public static class DependencyInjection
 
         services.AddScoped<IDocumentRepository, DocumentRepository>();
         services.AddScoped<ICommentRepository, CommentRepository>();
-        
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         return services;
 

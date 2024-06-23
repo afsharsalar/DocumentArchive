@@ -22,5 +22,11 @@ namespace DocumentArchive.Domain.CategoryAggregator
                 Title = title
             };
         }
+
+        public void UpdateCategory(string title, bool isApprovalNeeded)
+        {
+            Title = title;
+            IsApprovalNeeded = isApprovalNeeded;
+        }
     }
 }

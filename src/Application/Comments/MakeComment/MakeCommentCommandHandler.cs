@@ -1,5 +1,4 @@
 ﻿using DocumentArchive.Domain.CommentAggregator;
-using DocumentArchive.Domain.DocumentAggregator;
 
 namespace DocumentArchive.Application.Comments.MakeComment
 {
