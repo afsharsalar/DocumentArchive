@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Endpoints\Customer\" />
-    <Folder Include="Endpoints\Category\" />
   </ItemGroup>
 
 </Project>

@@ -10,8 +10,7 @@ public interface IDocumentRepository
     Task<IReadOnlyCollection<Document>> GetPaged(int page,int pageSize, CancellationToken cancellationToken);
 
     void Create(Document document);
-
-    void Update(Document document);
+   
 
     void Delete(Document document);
 

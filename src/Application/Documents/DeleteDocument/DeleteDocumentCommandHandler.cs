@@ -1,4 +1,4 @@
-﻿using DocumentArchive.Application.Exceptions;
+﻿using DocumentArchive.Application.Comments.MakeComment;
 
 namespace DocumentArchive.Application.Documents.DeleteDocument;
 

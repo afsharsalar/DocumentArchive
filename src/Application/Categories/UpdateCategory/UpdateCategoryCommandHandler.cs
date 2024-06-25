@@ -10,7 +10,7 @@ public class UpdateCategoryCommandHandler(ICategoryRepository categoryRepository
         var category =await _categoryRepository.GetById(request.CategoryId, cancellationToken);
         if (category == null) { throw new NotFoundCategoryException(); }
         category.UpdateCategory(request.Title, request.IsApprovalNeeded);
-        _categoryRepository.Update(category);
+        //_categoryRepository.Update(category);
         await _categoryRepository.SaveChangesAsync(cancellationToken);
         return new UpdateCategoryCommandResponse(category.Id);
     }

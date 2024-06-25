@@ -1,33 +1,33 @@
 ﻿using DocumentArchive.Domain.CategoryAggregator;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DocumentArchive.Infrastructure.Persistence.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository(DocumentArchiveDbContext dbContext) : ICategoryRepository
     {
         public void Create(Category category)
         {
-            throw new NotImplementedException();
+            dbContext.Categories.Add(category);
         }
 
         public Task<Category?> GetById(CategoryId categoryId, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return dbContext.Categories.SingleOrDefaultAsync(p=>p.Id == categoryId,cancellationToken);
         }
 
-        public Task<IReadOnlyCollection<Category>> GetPaged(int page, int pageSize, CancellationToken cancellationToken)
+        public async Task<IReadOnlyCollection<Category>> GetPaged(int page, int pageSize, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var categories = await dbContext.Categories
+                                       .Skip((page - 1) * pageSize).Take(pageSize)
+                                       .ToListAsync(cancellationToken);
+
+            return [.. categories];
         }
 
-        public Task SaveChangesAsync(CancellationToken cancellationToken)
+        public async Task SaveChangesAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            await dbContext.SaveChangesAsync(cancellationToken);
         }
 
         public void Update(Category category)

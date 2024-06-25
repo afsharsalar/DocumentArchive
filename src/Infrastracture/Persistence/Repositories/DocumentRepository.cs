@@ -2,14 +2,16 @@
 
 using Microsoft.EntityFrameworkCore;
 
+using System.Collections.Immutable;
+
 namespace DocumentArchive.Infrastructure.Persistence.Repositories;
 
-public class DocumentRepository(DocumentArchiveDbContext context) : IDocumentRepository
+public class DocumentRepository(DocumentArchiveDbContext dbContext) : IDocumentRepository
 {
-    private readonly DocumentArchiveDbContext _context = context;
+   
     public void Create(Document document)
     {
-        _context.Documents.Add(document);
+        dbContext.Documents.Add(document);
     }
 
     public void Delete(Document document)
@@ -19,12 +21,16 @@ public class DocumentRepository(DocumentArchiveDbContext context) : IDocumentRep
 
     public Task<Document?> GetById(DocumentId documentId, CancellationToken cancellationToken)
     {
-        return _context.Documents.SingleOrDefaultAsync(p => p.Id == documentId, cancellationToken);
+        return dbContext.Documents.SingleOrDefaultAsync(p => p.Id == documentId, cancellationToken);
     }
 
-    public Task<IReadOnlyCollection<Document>> GetPaged(int page, int pageSize, CancellationToken cancellationToken)
+    public async Task<IReadOnlyCollection<Document>> GetPaged(int page, int pageSize, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var documents = await dbContext.Documents
+                                      .Skip((page - 1) * pageSize).Take(pageSize)
+                                      .ToListAsync(cancellationToken);
+
+        return [.. documents];
     }
 
     public Task<IReadOnlyCollection<Tag>> GetTagsAsync(CancellationToken cancellationToken)
@@ -34,11 +40,6 @@ public class DocumentRepository(DocumentArchiveDbContext context) : IDocumentRep
 
     public Task SaveChangesAsync(CancellationToken cancellationToken)
     {
-        return _context.SaveChangesAsync(cancellationToken);
-    }
-
-    public void Update(Document document)
-    {
-        throw new NotImplementedException();
-    }
+        return dbContext.SaveChangesAsync(cancellationToken);
+    }    
 }

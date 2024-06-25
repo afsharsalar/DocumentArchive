@@ -26,5 +26,12 @@ namespace DocumentArchive.Domain.CustomerAggregator
                 
             };
         }
+
+        public void UpdateCustomer(CustomerType type, string title, Address address)
+        {
+            Type = type;
+            Title = title;
+            Address = address;
+        }
     }
 }

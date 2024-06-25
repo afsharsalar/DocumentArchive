@@ -1,4 +1,5 @@
-﻿using DocumentArchive.Application.Exceptions;
+﻿using DocumentArchive.Application.Comments.MakeComment;
+
 
 namespace DocumentArchive.Application.Documents.UpdateDocument;
 
@@ -18,7 +19,7 @@ public class UpdateDocumentCommandHandler(IDocumentRepository documentRepository
             request.Description,
             request.Tags);
 
-        documentRepository.Update(document);
+       
 
         await documentRepository.SaveChangesAsync(cancellationToken);
 
