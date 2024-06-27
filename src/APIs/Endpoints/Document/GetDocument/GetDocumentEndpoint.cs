@@ -18,7 +18,7 @@ namespace DocumentArchive.APIs.Endpoints.Document.GetDocument
                 var result = await mediator.Send(command, cancellationToken);
 
                 return mapper.Map<GetDocumentResponse>(result);
-            }).Validator<GetDocumentRequest>()
+            })
         .WithTags(EndpointSchema.DocumentTag);
         }
     }

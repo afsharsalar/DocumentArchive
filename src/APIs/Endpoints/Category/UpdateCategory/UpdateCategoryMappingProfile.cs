@@ -7,9 +7,12 @@ namespace DocumentArchive.APIs.Endpoints.Category.UpdateCategory
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<UpdateCategoryRequest, UpdateCategoryCommand>();
+            config.ForType<UpdateCategoryRequest, UpdateCategoryCommand>()
+                .Map(p => p.CategoryId, src => CategoryId.Create(src.CategoryId));
+
+
             config.ForType<UpdateCategoryCommandResponse, UpdateCategoryResponse>()
-                .Map(p => p.CategoryId, src => CategoryId.Create(src.CategoryId.Value));
+                .Map(p => p.CategoryId, src => src.CategoryId.Value);
         }
     }
 }

@@ -13,11 +13,11 @@ namespace CategoryArchive.APIs.Endpoints.Category.GetCategory
                 IMediator mediator,
                 CancellationToken cancellationToken) =>
             {
-                var command = mapper.Map<GetCategoryQuery>(request);
-                var result = await mediator.Send(command, cancellationToken);
+                var query = mapper.Map<GetCategoryQuery>(request);
+                var result = await mediator.Send(query, cancellationToken);
 
                 return mapper.Map<GetCategoryResponse>(result);
-            }).Validator<GetCategoryRequest>()
+            })
         .WithTags(EndpointSchema.CategoryTag);
         }
     }

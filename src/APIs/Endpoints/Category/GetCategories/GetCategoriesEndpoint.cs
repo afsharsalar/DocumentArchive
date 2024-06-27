@@ -9,7 +9,7 @@ namespace CategoryArchive.APIs.Endpoints.Category.GetCategory
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapGet("/categories", async (
-                GetCategoriesRequest request,
+                [AsParameters]  GetCategoriesRequest request,
                 IMapper mapper,
                 IMediator mediator,
                 CancellationToken cancellationToken) =>
@@ -17,8 +17,8 @@ namespace CategoryArchive.APIs.Endpoints.Category.GetCategory
                 var command = mapper.Map<GetCategoriesQuery>(request);
                 var result = await mediator.Send(command, cancellationToken);
 
-                return mapper.Map<GetCategoriesResponse>(result);
-            }).Validator<GetCategoriesRequest>()
+                return mapper.Map<IEnumerable<GetCategoriesResponse>>(result);
+            })
         .WithTags(EndpointSchema.CategoryTag);
         }
     }

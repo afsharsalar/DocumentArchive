@@ -15,7 +15,7 @@ namespace DocumentArchive.APIs.Endpoints.Comment.GetComments
                 var command = mapper.Map<GetCommentsQuery>(request);
                 var result = await mediator.Send(command, cancellationToken);
 
-                return mapper.Map<GetCommentsResponse>(result);
+                return mapper.Map<IEnumerable<GetCommentsResponse>>(result);
             }).Validator<GetCommentsRequest>()
         .WithTags(EndpointSchema.CommentTag);
         }

@@ -1,7 +1,7 @@
 ﻿namespace CategoryArchive.APIs.Endpoints.Category.GetCategory
 {
     public record GetCategoryResponse
-        (Guid Id,
+        (string Id,
         string Title,
         bool IsApprovalNeeded);
 }

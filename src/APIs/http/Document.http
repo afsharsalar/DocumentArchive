@@ -1,0 +1,61 @@
+@DocumentArchive.APIs_HostAddress = https://localhost:44317
+
+
+GET {{DocumentArchive.APIs_HostAddress}}/Documents/
+Accept: application/json
+
+###
+
+
+GET {{DocumentArchive.APIs_HostAddress}}/Documents/23f517d7-f6c6-4612-b12b-bd0b6969cbbd
+Accept: application/json
+
+###
+
+
+POST   {{DocumentArchive.APIs_HostAddress}}/Documents/
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "userId": 0,
+  "title": "Sample Doc",
+  "description": "string",
+  "tags": [
+    "Tag1",
+    "Tag2"
+  ]
+}
+
+###
+
+
+
+PUT   {{DocumentArchive.APIs_HostAddress}}/Documents/
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+  "documentId": "615d3271-08c4-47aa-b58b-234e330431b5",
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "userId": 0,
+  "title": "Sample Doc",
+  "description": "string",
+  "tags": [
+    "Tag1",
+    "Tag2"
+  ]
+}
+
+###
+
+
+
+
+
+
+
+

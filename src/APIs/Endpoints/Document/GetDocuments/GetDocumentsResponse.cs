@@ -1,16 +1,16 @@
 ﻿using DocumentArchive.Domain.CommentAggregator;
 
-namespace DocumentArchive.APIs.Endpoints.Document.GetDocument
+namespace DocumentArchive.APIs.Endpoints.Document.GetDocuments
 {
-    public record GetDocumentResponse
-        (Guid DocumentId,
+    public record GetDocumentsResponse(Guid DocumentId,
         int UserId,
-        Guid? CategoryId,
-        Guid? CustomerId,
+        Guid CategoryId,
+        Guid CustomerId,
         string Title,
         string Description,
         DateTime CreatedOnUtc,
         DateTime? ApprovedOnUtc,
         DocumentStatus Status,
         string[] Tags);
+    
 }

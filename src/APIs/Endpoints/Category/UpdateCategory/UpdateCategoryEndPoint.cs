@@ -7,14 +7,14 @@ namespace CategoryArchive.APIs.Endpoints.Category.UpdateCategory
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("/categories/{categoryId}", async (
-                [FromRoute] Guid categoryId,
+            app.MapPut("/categories", async (               
                 [FromBody] UpdateCategoryRequest request,
                 IMapper mapper,
                 IMediator mediator,
                 CancellationToken cancellationToken) =>
             {
-                if (categoryId != request.CategoryId) return Results.NotFound();
+                // Check if id matches the request's CategoryId if necessary
+                // if (id != request.CategoryId) return Results.NotFound();
 
                 var command = mapper.Map<UpdateCategoryCommand>(request);
                 var response = await mediator.Send(command, cancellationToken);

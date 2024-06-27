@@ -9,7 +9,7 @@ namespace DocumentArchive.APIs.Endpoints.Category.CreateCategory
         {
             config.ForType<CreateCategoryRequest, CreateCategoryCommand>();
             config.ForType<CreateCategoryCommandResponse, CreateCategoryResponse>()
-                .Map(p => p.CategoryId, src => CategoryId.Create(src.CategoryId.Value));
+               .Map(p => p.CategoryId, src => src.CategoryId.Value);
         }
     }
 }

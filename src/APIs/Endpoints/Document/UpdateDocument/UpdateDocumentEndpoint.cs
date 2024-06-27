@@ -7,19 +7,17 @@ public class UpdateDocumentEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("/documents/{documentId}", async (
-           [FromRoute] Guid documentId,
+        app.MapPut("/documents/", async (
+           
            [FromBody] UpdateDocumentRequest request,
            IMapper mapper,
            IMediator mediator,
            CancellationToken cancellationToken) =>
         {
-            if(documentId!=request.DocumentId) return Results.NotFound();
-
             var command = mapper.Map<UpdateDocumentCommand>(request);
 
-            await mediator.Send(command, cancellationToken);
-            return Results.Ok();
+            var response=await mediator.Send(command, cancellationToken);
+            return mapper.Map<UpdateDocumentResponse>(response);
 
         }).Validator<UpdateDocumentRequest>()
      .WithTags(EndpointSchema.DocumentTag);

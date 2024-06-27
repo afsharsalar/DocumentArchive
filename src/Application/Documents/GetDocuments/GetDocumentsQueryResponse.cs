@@ -7,7 +7,8 @@
         int UserId,
         string Title,
         string Description,
-        DateTime CreatedOnUtc)
+        DateTime CreatedOnUtc,
+        IReadOnlyCollection<Tag> Tags)
     {
         public static explicit operator GetDocumentsQueryResponse(Document document)
             => new GetDocumentsQueryResponse
@@ -18,6 +19,7 @@
                 document.UserId,
                 document.Title,
                 document.Description,
-                document.CreatedOnUtc);
+                document.CreatedOnUtc,
+                document.Tags);
     }
 }

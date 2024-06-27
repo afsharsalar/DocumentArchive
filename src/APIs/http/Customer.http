@@ -1,0 +1,57 @@
+@DocumentArchive.APIs_HostAddress = https://localhost:44317
+
+
+GET {{DocumentArchive.APIs_HostAddress}}/Customers/
+Accept: application/json
+
+###
+
+
+GET {{DocumentArchive.APIs_HostAddress}}/Customers/7928f6ea-e6af-45f1-9c47-63b7750f6abb
+Accept: application/json
+
+###
+
+
+POST   {{DocumentArchive.APIs_HostAddress}}/Customers/
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+  "type": 0,
+  "title": "Salar Afshar",
+  "street": "Ammar",
+  "city": "Urmia",
+  "postalCode": "1111111111"
+}
+
+###
+
+
+PUT   {{DocumentArchive.APIs_HostAddress}}/Customers/
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+  "customerId":"7928f6ea-e6af-45f1-9c47-63b7750f6abb",
+  "type": 1,
+  "title": "Salar Afshar",
+  "street": "Ammar",
+  "city": "Urmia",
+  "postalCode": "222222222"
+}
+
+###
+
+
+DELETE   {{DocumentArchive.APIs_HostAddress}}/Customers/7928f6ea-e6af-45f1-9c47-63b7750f6abb
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+###
+
+
+
+
+
+
