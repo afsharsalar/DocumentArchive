@@ -1,0 +1,32 @@
+[
+  {
+    "outputFileName": "wwwroot/bundle/css/global.min.css",
+    "inputFiles": [
+      "wwwroot/assets/css/bootstrap.min.css",
+      "wwwroot/assets/css/bootstrap_limitless.min.css",
+      "wwwroot/assets/css/layout.min.css",
+      "wwwroot/assets/css/components.min.css",
+      "wwwroot/assets/css/colors.min.css"
+
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/bundle/js/core.min.js",
+    "inputFiles": [
+      "wwwroot/global_assets/js/main/jquery.min.js",
+      "wwwroot/global_assets/js/main/bootstrap.bundle.min.js",
+      "wwwroot/global_assets/js/plugins/loaders/blockui.min.js"
+
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

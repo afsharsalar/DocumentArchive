@@ -18,7 +18,8 @@ namespace CategoryArchive.APIs.Endpoints.Category.CreateCategory
 
                 return mapper.Map<CreateCategoryResponse>(response);
             }).Validator<CreateCategoryRequest>()
-          .WithTags(EndpointSchema.CategoryTag);
+          .WithTags(EndpointSchema.CategoryTag)
+          .RequireAuthorization();
         }
     }
 }

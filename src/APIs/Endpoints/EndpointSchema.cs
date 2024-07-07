@@ -6,5 +6,6 @@
         public const string CommentTag = "Comments";
         public const string CustomerTag = "Customers";
         public const string CategoryTag = "Categories";
+        public const string AuthTag = "Auth";
     }
 }
