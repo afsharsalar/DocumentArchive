@@ -1,9 +1,28 @@
+using App;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+builder.Services.ConfigureApplicationLayer(builder.Configuration);
+builder.Services.ConfigureInfrastructureLayer(builder.Configuration);
+builder.Services.ConfigureMapster();
+
+
+var mvcBuilder = builder.Services.AddRazorPages();
+
+if (builder.Environment.IsDevelopment())
+{
+	mvcBuilder.AddRazorRuntimeCompilation();
+}
+
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

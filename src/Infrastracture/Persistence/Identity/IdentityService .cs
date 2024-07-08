@@ -70,9 +70,10 @@ namespace DocumentArchive.Infrastructure.Persistence.Identity
         }
 
 
-        public async Task<Result> Login(string username,string password)
-        {
-            //_userManager.PasswordValidators(username, password);
-        }
+        //public async Task<Result> Login(string username,string password)
+        //{
+        //    //_userManager.PasswordValidators(username, password);
+        //    return new Result(true,new);
+        //}
     }
 }
